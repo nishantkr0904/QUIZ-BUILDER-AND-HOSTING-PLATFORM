@@ -35,7 +35,7 @@ Follow a **clean, conventional Laravel structure**:
 /auth          # Login and registration views
 /admin         # Admin dashboard, quiz builder views
 /user          # User dashboard, quiz attempt, results views
-/js              # JS scripts (timer, AJAX interactions)
+/js              # JS scripts (timer.js, quiz.js for AJAX interactions)
 /css             # Custom CSS files if needed
 
 /routes
@@ -46,7 +46,7 @@ web.php          # All web routes
 /seeders         # Seeders for test data
 
 /public
-/assets          # Images, JS, CSS (compiled)
+/assets          # Images, compiled JS, CSS
 
 .env               # Environment configuration
 composer.json      # PHP dependencies
