@@ -197,3 +197,6 @@ webpack.mix.js     # Laravel Mix configuration
 ---
 
 By following these **end-to-end best practices**, the **Quiz Builder and Hosting Platform** will remain **scalable, secure, maintainable, and CI/CD-ready**, ensuring reliable delivery and long-term project success.
+
+### Note:
+-For any changes you make, summarize in the changelog.md file.
