@@ -38,3 +38,6 @@ To build a web-based platform where administrators (educators/trainers) can crea
 6. Dashboards <-> Admin + User history views 
 7. Testing & Fixes <-> Flow testing and bug correction 
 8. Deployment <-> Final demo and submission
+
+### Note:
+-For any changes you make, summarize in the changelog.md file.
