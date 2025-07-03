@@ -107,3 +107,6 @@ app.css        # Compiled CSS from SASS
 ---
 
 By following these **HTML / CSS (Bootstrap + SASS) / JS (Vanilla) frontend best practices**, the **Quiz Builder and Hosting Platform** will remain clean, accessible, scalable, and production-ready within its Laravel ecosystem.
+
+### Note:
+-For any changes you make, summarize in the changelog.md file.
