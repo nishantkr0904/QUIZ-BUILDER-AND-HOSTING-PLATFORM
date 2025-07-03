@@ -154,3 +154,6 @@ composer.json      # PHP dependencies
 ---
 
 By following these **Laravel / PHP / MySQL backend best practices**, the **Quiz Builder and Hosting Platform** will remain scalable, secure, and maintainable for long-term use and future enhancements.
+
+### Note:
+-For any changes you make, summarize in the changelog.md file.
