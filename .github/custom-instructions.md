@@ -10,6 +10,11 @@ Technologies used...
 - AJAX
 - GitHub
 
+### General
+
+Rules
+-For any changes you make, summarize in the changelog.md file.
+
 # 🚀 Laravel / PHP / MySQL / Bootstrap Best Practices
 
 This guide outlines **best practices** for building a **Laravel / PHP / MySQL / Bootstrap** application. The goal is **clarity, scalability, and maintainability**, following Laravel conventions with minimal unnecessary abstraction.
@@ -128,3 +133,6 @@ webpack.mix.js     # Laravel Mix configuration
 ---
 
 By following these **Laravel / PHP / MySQL / Bootstrap best practices**, the **Quiz Builder and Hosting Platform** will remain clean, scalable, and production-ready.
+
+### Note:
+-For any changes you make, summarize in the changelog.md file.
