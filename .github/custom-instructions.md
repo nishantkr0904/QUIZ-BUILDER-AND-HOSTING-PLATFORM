@@ -231,7 +231,7 @@ By following these **end-to-end best practices**, the **Quiz Builder and Hosting
   {{-- ✅ GOOD: Blade Component --}}
   <x-quiz.card :quiz="$quiz" />
   ````
-🔖 Rule: Extracting UI into Blade components improves reusability, readability, and maintainability of views.
+### 🔖 Rule: Extracting UI into Blade components improves reusability, readability, and maintainability of views.
 ---
 
 ## 🛠️ Database Design Best Practices
