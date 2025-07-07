@@ -201,17 +201,15 @@ By following these **end-to-end best practices**, the **Quiz Builder and Hosting
 ### Note:
 -For any changes you make, summarize in the changelog.md file.
 
-# Bonus Instructions 
-(Do consider the worthful and necessary unmatched instructions to above instructions)
+# 🎁 Bonus Instructions
 
-🔖 **Rules:**
+## 🔖 Additional Backend & Frontend Rules
 
-- **Use RESTful resource controllers** (e.g., QuizController handles index, create, store, edit, update, delete).
-- **Use Laravel Eloquent relationships** for quizzes, questions, and users.
-- **No business logic in routes/web.php** – delegate to controllers.
-- **Use Blade templating for views**, keep minimal logic in views.
-- **Organize JavaScript files per feature module** (timer.js, quiz.js) for clarity.
-- **Keep CSS structured**, use Bootstrap utility classes before writing custom CSS.
+✅ **Key Guidelines:**
+
+* **Use RESTful resource controllers** for clear route-to-controller mappings. For example, `QuizController` handles index, create, store, edit, update, delete actions following Laravel conventions.
+* Define **Laravel Eloquent relationships** in models to manage associations efficiently (e.g. Quiz hasMany Questions; Question belongsTo Quiz; User hasMany QuizAttempts).
+* **Organize JavaScript files per feature module** (e.g. timer.js, quiz.js) under `resources/js` for clarity, reusability, and maintainability.
 
 ---
 
@@ -233,16 +231,16 @@ By following these **end-to-end best practices**, the **Quiz Builder and Hosting
   {{-- ✅ GOOD: Blade Component --}}
   <x-quiz.card :quiz="$quiz" />
   ````
-
+🔖 Rule: Extracting UI into Blade components improves reusability, readability, and maintainability of views.
 ---
 
 ## 🛠️ Database Design Best Practices
 
 ✅ **Key Guidelines:**
 
-* **Use migrations** for all schema changes.
-* **Define foreign keys and constraints** for data integrity (e.g. questions table references quizzes).
-* **Seeders** for dummy quizzes, questions, and users for testing/demo.
+* Use **migrations** for all schema changes to maintain versioned, team-shareable database design.
+* Define **foreign keys and constraints** for data integrity (e.g. questions table references quizzes table with `quiz_id` as foreign key).
+* Create **seeders** for dummy quizzes, questions, and users to facilitate testing, UI development, and demo deployments.
 
 ---
 
@@ -250,9 +248,9 @@ By following these **end-to-end best practices**, the **Quiz Builder and Hosting
 
 ✅ **Key Guidelines:**
 
-* Use **Laravel Breeze or Jetstream** for authentication scaffolding.
-* **Role-based authorization**: differentiate Admin and User using `is_admin` field or Laravel Gates/Policies.
-* Protect routes via **middleware** (`auth`, `admin`).
+* Use **Laravel Breeze or Jetstream** for authentication scaffolding for clean, secure, and scalable user auth systems.
+* Implement **role-based authorization** using an `is_admin` boolean field in users table or Laravel Gates/Policies to differentiate Admins and Users.
+* Protect routes using **middleware** (`auth`, custom `admin`) to restrict page and action access based on user roles.
 
 ---
 
@@ -260,9 +258,9 @@ By following these **end-to-end best practices**, the **Quiz Builder and Hosting
 
 ✅ **Key Guidelines:**
 
-* Use **AJAX requests for dynamic answer saving** to avoid full page reloads.
-* Implement **timer logic in JS**, synced with server time to prevent manipulation.
-* Auto-submit quiz form when timer ends using clean event listeners.
+* Use **AJAX requests for dynamic answer saving** to enhance UX by avoiding full page reloads during quiz attempts.
+* Implement **timer logic in JavaScript**, synchronized with **server time** via AJAX or server-rendered initial timestamps to prevent manipulation and cheating.
+* Ensure **auto-submit functionality** on quiz form when timer ends with clean, event-driven JS implementation.
 
 ---
 
@@ -270,9 +268,9 @@ By following these **end-to-end best practices**, the **Quiz Builder and Hosting
 
 ✅ **Key Guidelines:**
 
-* Use **GitHub for version control**, commit frequently with meaningful messages.
-* Test locally before pushing to the main branch.
-* Deploy on **shared hosting or cloud platforms (e.g. DigitalOcean, AWS Lightsail)** with `.env` environment configuration.
+* Use **GitHub for version control**, committing frequently with **clear, meaningful messages**.
+* Always **test locally and on staging branches** before merging to main or deploying.
+* Deploy via **CI/CD pipelines (GitHub Actions) for automated tests and builds**, but also ensure compatibility with **shared hosting or cloud platforms (e.g. DigitalOcean, AWS Lightsail)**. Configure environment variables securely via `.env` files.
 
 ---
 
