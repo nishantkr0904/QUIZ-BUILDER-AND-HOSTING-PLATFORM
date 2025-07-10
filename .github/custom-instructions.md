@@ -278,7 +278,7 @@ By following these **Laravel / PHP / MySQL / Bootstrap best practices**, the **Q
 
 ## ✅ Final Note
 
-### 💡 Instructions to keep any changes:
+### 💡 Instructions to keep change-notes:
 - All changes and updates should be summarized in the `changelog.md` file to maintain transparent project history and accountability.
 
 ### 💡 Instructions to keep workflow-notes:
