@@ -280,37 +280,37 @@ By following these **Laravel / PHP / MySQL / Bootstrap best practices**, the **Q
 
 All changes and updates should be summarized in the `changelog.md` file to maintain transparent project history and accountability.
 
->💡 **Instructions for additional notes:**
-> 
-> 1. For **each implementation** (including external technologies/libraries/frameworks such as Bootstrap, Laravel, MySQL, as well as **internal components, modules, and services** such as Timer module, Scoring Service) used in this project:
-> 
-> 2. Write **implementation notes sequentially** in the **exact code implementation order**.
-> 
-> 3. Group the notes clearly under the following **major sections**:
-> 
-> - **Frontend**
-> - **Backend**
-> - **Database**
-> - **Deployment**
-> 
-> 4. For **each element**, include **brief but optimized explanations (2-3 sentences)** covering:
-> 
-> - ✅ **What is it?**  
-> A clear, simple definition understandable by both developers and non-technical stakeholders.
-> 
-> - ✅ **What is its purpose and general usage?**  
-> Its role in development and why it is used generally.
-> 
-> - ✅ **Why is it used in this project instead of alternatives?**  
-> A concise comparative insight (include why this choice is optimal for this specific project over alternatives).
-> 
-> ➡️ **Example Entry:**
-> 
-> **Frontend**
-> 
-> **Vanilla JS**  
-> Vanilla JS is plain JavaScript without any frameworks or libraries. It is used for DOM manipulation and AJAX in this project due to its lightweight nature and no dependency overhead. Alternatives like jQuery were avoided to keep the bundle small and performance optimal.
-> 
-> 5. Save all your notes in a markdown file named **`implementation-notes.md`**.
-> 
-> ➡️ **Purpose:** These implementation notes are for better understanding the workflow of the project documentation for **clarity, onboarding, decision justification, and stakeholder understanding**.
+💡 **Instructions to keep workflow-notes:**
+
+1. For **each implementation** (including external technologies/libraries/frameworks such as Bootstrap, Laravel, MySQL, as well as **internal components, modules, and services** such as Timer module, Scoring Service) used in this project:
+
+2. Write **implementation notes sequentially** in the **exact code implementation order**.
+
+3. Group the notes clearly under the following **major sections**:
+
+- **Frontend**
+- **Backend**
+- **Database**
+- **Deployment**
+
+4. For **each element**, include **brief but optimized explanations (2-3 sentences)** covering:
+
+- ✅ **What is it?**  
+A clear, simple definition understandable by both developers and non-technical stakeholders.
+
+- ✅ **What is its purpose and general usage?**  
+Its role in development and why it is used generally.
+
+- ✅ **Why is it used in this project instead of alternatives?**  
+A concise comparative insight (include why this choice is optimal for this specific project over alternatives).
+
+➡️ **Example Entry:**
+
+**Frontend**
+
+**Vanilla JS**  
+Vanilla JS is plain JavaScript without any frameworks or libraries. It is used for DOM manipulation and AJAX in this project due to its lightweight nature and no dependency overhead. Alternatives like jQuery were avoided to keep the bundle small and performance optimal.
+
+5. Save all your notes in a markdown file named **`implementation-notes.md`**.
+
+➡️ **Purpose:** These implementation notes are for better understanding the workflow of the project documentation for **clarity, onboarding, decision justification, and stakeholder understanding**.
