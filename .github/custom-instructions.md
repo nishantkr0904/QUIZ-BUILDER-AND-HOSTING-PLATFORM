@@ -278,9 +278,10 @@ By following these **Laravel / PHP / MySQL / Bootstrap best practices**, the **Q
 
 ## ✅ Final Note
 
-💡 All changes and updates should be summarized in the `changelog.md` file to maintain transparent project history and accountability.
+### 💡 Instructions to keep any changes:
+- All changes and updates should be summarized in the `changelog.md` file to maintain transparent project history and accountability.
 
-💡 ### Instructions to keep workflow-notes:
+### 💡 Instructions to keep workflow-notes:
 
 1. For **each implementation** (including external technologies/libraries/frameworks such as Bootstrap, Laravel, MySQL, as well as **internal components, modules, and services** such as Timer module, Scoring Service) used in this project:
 
