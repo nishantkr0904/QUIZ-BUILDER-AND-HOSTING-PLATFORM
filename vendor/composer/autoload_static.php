@@ -98,6 +98,7 @@ class ComposerStaticInit6bf479ec67ce9007f5f6328817b17bd2
             'League\\Config\\' => 14,
             'League\\CommonMark\\' => 18,
             'Laravel\\SerializableClosure\\' => 28,
+            'Laravel\\Sanctum\\' => 16,
             'Laravel\\Prompts\\' => 16,
         ),
         'I' => 
@@ -113,6 +114,7 @@ class ComposerStaticInit6bf479ec67ce9007f5f6328817b17bd2
         'F' => 
         array (
             'Fruitcake\\Cors\\' => 15,
+            'Faker\\' => 6,
         ),
         'E' => 
         array (
@@ -322,6 +324,10 @@ class ComposerStaticInit6bf479ec67ce9007f5f6328817b17bd2
         array (
             0 => __DIR__ . '/..' . '/laravel/serializable-closure/src',
         ),
+        'Laravel\\Sanctum\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/sanctum/src',
+        ),
         'Laravel\\Prompts\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/prompts/src',
@@ -347,6 +353,10 @@ class ComposerStaticInit6bf479ec67ce9007f5f6328817b17bd2
         'Fruitcake\\Cors\\' => 
         array (
             0 => __DIR__ . '/..' . '/fruitcake/php-cors/src',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
