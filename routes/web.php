@@ -44,3 +44,7 @@ Route::middleware(['auth'])->prefix('ajax')->group(function () {
     Route::post('/quiz/{quizId}/save-answer', [\App\Http\Controllers\QuizAjaxController::class, 'saveAnswer'])->name('ajax.quiz.saveAnswer');
     Route::post('/quiz/{quizId}/submit', [\App\Http\Controllers\QuizAjaxController::class, 'submit'])->name('ajax.quiz.submit');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

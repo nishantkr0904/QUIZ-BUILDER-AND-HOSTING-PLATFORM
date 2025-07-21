@@ -6,18 +6,26 @@
 <div class="container py-5">
     <h2 class="mb-4">Available Quizzes</h2>
     <div class="row">
-        {{-- Example quiz cards, replace with dynamic content --}}
-        <div class="col-md-4 mb-4" v-for="quiz in quizzes" :key="quiz.id">
+        @forelse($quizzes as $quiz)
+        <div class="col-md-4 mb-4">
             <div class="card quiz-card">
                 <div class="card-body">
-                    <h5 class="card-title">Quiz Title</h5>
-                    <p class="card-text">Category: <span class="badge bg-info">Science</span></p>
-                    <p class="card-text">Difficulty: <span class="badge bg-warning text-dark">Medium</span></p>
-                    <a href="{{ route('quiz.take', ['id' => 1]) }}" class="btn btn-primary">Start Quiz</a>
+                    <h5 class="card-title">{{ $quiz->title }}</h5>
+                    <p class="card-text">Category: <span class="badge bg-info">{{ $quiz->category->name }}</span></p>
+                    <p class="card-text">Difficulty: <span class="badge bg-warning text-dark">{{ ucfirst($quiz->difficulty) }}</span></p>
+                    <p class="card-text">Duration: {{ $quiz->duration }} minutes</p>
+                    <p class="card-text">Passing Score: {{ $quiz->passing_score }}%</p>
+                    <a href="{{ route('quiz.take', ['id' => $quiz->id]) }}" class="btn btn-primary">Start Quiz</a>
                 </div>
             </div>
         </div>
-        {{-- End example --}}
+        @empty
+        <div class="col-12">
+            <div class="alert alert-info">
+                No quizzes available at the moment.
+            </div>
+        </div>
+        @endforelse
     </div>
 </div>
 @endsection
