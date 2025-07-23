@@ -22,7 +22,20 @@ class QuizController extends Controller
 
     public function result($id)
     {
-        // Placeholder for result logic
-        return view('quizzes.result');
+        $quiz = Quiz::findOrFail($id);
+        $result = $quiz->results()->where('user_id', Auth::id())->latest()->first();
+        return view('quizzes.result', compact('quiz', 'result'));
+    }
+
+    public function resume($id)
+    {
+        $quiz = Quiz::with('questions')->findOrFail($id);
+        $result = $quiz->results()
+            ->where('user_id', Auth::id())
+            ->where('completed', false)
+            ->latest()
+            ->firstOrFail();
+            
+        return view('quizzes.resume', compact('quiz', 'result'));
     }
 }
