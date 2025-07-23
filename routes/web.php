@@ -5,9 +5,11 @@ use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LeaderboardController;
 
 // Public routes
 Route::get('/', [QuizController::class, 'index'])->name('home');
+Route::get('/leaderboard', [LeaderboardController::class, 'index'])->name('leaderboard');
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
@@ -25,6 +27,8 @@ Route::middleware(['auth'])->group(function () {
         return view('user.dashboard');
     })->name('dashboard');
     Route::get('/my-quizzes', [ResultController::class, 'index'])->name('user.quizzes');
+    Route::get('/results', [ResultController::class, 'results'])->name('user.results');
+    Route::get('/quiz/{id}/resume', [QuizController::class, 'resume'])->name('quiz.resume');
     // ...other user routes
 });
 

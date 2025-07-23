@@ -10,11 +10,13 @@ class Result extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'quiz_id', 'score', 'details',
+        'user_id', 'quiz_id', 'score', 'details', 'completed', 'completed_at', 'answered_questions_count'
     ];
 
     protected $casts = [
         'details' => 'array',
+        'completed' => 'boolean',
+        'completed_at' => 'datetime',
     ];
 
     public function user()
