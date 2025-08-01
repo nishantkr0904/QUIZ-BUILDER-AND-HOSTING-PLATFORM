@@ -512,6 +512,8 @@ class ComposerStaticInit6bf479ec67ce9007f5f6328817b17bd2
         'Database\\Factories\\QuizFactory' => __DIR__ . '/../..' . '/database/factories/QuizFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\SampleQuizzesSeeder' => __DIR__ . '/../..' . '/database/seeders/SampleQuizzesSeeder.php',
+        'Database\\Seeders\\UpdateQuestionOrderSeeder' => __DIR__ . '/../..' . '/database/seeders/UpdateQuestionOrderSeeder.php',
         'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
         'DateException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
         'DateInvalidOperationException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateInvalidOperationException.php',

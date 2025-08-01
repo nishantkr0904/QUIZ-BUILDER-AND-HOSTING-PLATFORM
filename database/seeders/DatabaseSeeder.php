@@ -1,24 +1,27 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
-    public function run(): void
+    public function run()
     {
-        \App\Models\User::factory()->admin()->create([
-            'email' => 'admin@example.com',
-            'password' => bcrypt('admin123'),
-        ]);
-        \App\Models\User::factory(5)->create();
-        \App\Models\Category::factory(3)->create()->each(function ($category) {
-            \App\Models\Quiz::factory(2)->create(['category_id' => $category->id])->each(function ($quiz) {
-                \App\Models\Question::factory(5)->create(['quiz_id' => $quiz->id]);
-            });
-        });
+        // Create admin user if it doesn't exist
+        if (!DB::table('users')->where('email', 'admin@qbhp.com')->exists()) {
+            DB::table('users')->insert([
+                'name' => 'Admin User',
+                'email' => 'admin@qbhp.com',
+                'password' => Hash::make('password123'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
+
+        // Run sample quiz seeder (which will create categories and quizzes)
+        $this->call(SampleQuizzesSeeder::class);
     }
 }

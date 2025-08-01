@@ -39,7 +39,7 @@
             @else
                 <div class="text-center py-4">
                     <p class="mb-0">You haven't attempted any quizzes yet.</p>
-                    <a href="{{ route('quizzes.list') }}" class="btn btn-primary mt-3">Browse Available Quizzes</a>
+                    <a href="{{ route('home') }}" class="btn btn-primary mt-3">Browse Available Quizzes</a>
                 </div>
             @endif
         </div>

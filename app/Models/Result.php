@@ -9,6 +9,8 @@ class Result extends Model
 {
     use HasFactory;
 
+    protected $table = 'quiz_results';
+    
     protected $fillable = [
         'user_id', 'quiz_id', 'score', 'details', 'completed', 'completed_at', 'answered_questions_count'
     ];

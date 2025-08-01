@@ -11,19 +11,22 @@ class QuestionFactory extends Factory
 
     public function definition()
     {
-        $type = $this->faker->randomElement(['MCQ', 'single', 'true_false']);
-        $options = $type === 'MCQ' ? [
+        $type = $this->faker->randomElement(['multiple_choice', 'true_false', 'single_answer']);
+        $options = $type === 'multiple_choice' ? [
             'A' => $this->faker->word(),
             'B' => $this->faker->word(),
             'C' => $this->faker->word(),
             'D' => $this->faker->word(),
-        ] : null;
+        ] : ($type === 'true_false' ? ['True', 'False'] : null);
+        
         return [
             'quiz_id' => Quiz::factory(),
-            'type' => $type,
+            'question_type' => $type,
             'question_text' => $this->faker->sentence(),
             'options' => $options,
-            'correct_answer' => $type === 'true_false' ? $this->faker->randomElement(['true', 'false']) : 'A',
+            'correct_answer' => $type === 'true_false' ? 'True' : 'A',
+            'explanation' => $this->faker->paragraph(),
+            'order' => $this->faker->numberBetween(1, 10),
             'points' => 1,
         ];
     }

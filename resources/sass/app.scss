@@ -1,8 +1,71 @@
-// Fonts
+// Core Sass modules
+@use "sass:math";
+@use "sass:color";
+
+// Bootstrap with configuration
+@use "bootstrap/scss/bootstrap" as *;
+
+// Custom styles and overrides
+@use "custom" as *;
+
+// Web fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
-// Variables
-@import 'variables';
+// Add other custom styles here
 
-// Bootstrap
-@import 'bootstrap/scss/bootstrap';
+// Custom styles and overrides
+@layer base {
+    :root {
+        --primary: #{$primary};
+        --secondary: #{$secondary};
+    }
+
+    body {
+        background-color: #f8f9fa;
+    }
+}
+
+@layer components {
+    .quiz-card {
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .btn {
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .badge {
+        font-weight: 500;
+        padding: 0.5em 0.75em;
+    }
+}
+
+// Custom utility classes
+@layer utilities {
+    .text-primary {
+        color: var(--primary) !important;
+    }
+    
+    .text-secondary {
+        color: var(--secondary) !important;
+    }
+
+    .gap-2 {
+        gap: 0.5rem !important;
+    }
+
+    .shadow-hover {
+        transition: box-shadow 0.3s ease;
+        &:hover {
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+    }
+}

@@ -3,7 +3,7 @@
         'name' => 'quiz/builder-hosting-platform',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '37b7420403684886e042ce3e8b8158ae5079abdd',
+        'reference' => 'e8469718ef10202c3f483953601c145c883c9c45',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -812,7 +812,7 @@
         'quiz/builder-hosting-platform' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '37b7420403684886e042ce3e8b8158ae5079abdd',
+            'reference' => 'e8469718ef10202c3f483953601c145c883c9c45',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

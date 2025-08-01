@@ -9,6 +9,9 @@ Technologies used...
 - JavaScript (Vanilla + AJAX)
 - Laravel Blade Templates
 
+### Note:
+-For any changes you make, summarize in the changelog.md file.
+
 # 🚀 HTML / CSS (Bootstrap + SASS) / JS (Vanilla) Frontend Best Practices
 
 This guide outlines **best practices** for building a **Laravel-integrated frontend** using HTML, CSS (Bootstrap + SASS), and Vanilla JS with AJAX. The goal is **readability, maintainability, accessibility, and seamless Blade integration**.
@@ -107,6 +110,3 @@ app.css        # Compiled CSS from SASS
 ---
 
 By following these **HTML / CSS (Bootstrap + SASS) / JS (Vanilla) frontend best practices**, the **Quiz Builder and Hosting Platform** will remain clean, accessible, scalable, and production-ready within its Laravel ecosystem.
-
-### Note:
--For any changes you make, summarize in the changelog.md file.

@@ -3,7 +3,10 @@
 ## Project Title: Quiz Builder and Hosting Platform 
 
 ### Objective:
-To build a web-based platform where administrators (educators/trainers) can create quizzes, and users can attempt them and receive scores instantly. This project enhances understanding of dynamic content generation, score logic, role-based interfaces, and session tracking.
+To build a web-based platform where administrators (educators/trainers) can create quizzes, and users can attempt them and receive scores instantly. This project enhances understanding of dynamic content generation, score logic, role-based interfaces, and
+
+### Note:
+-For any changes you make, summarize in the changelog.md file. session tracking.
 
 ### Key Features:
 - Admin Panel: Admin users can log in, create quizzes, define question sets, and manage quiz duration and availability. 
@@ -38,6 +41,3 @@ To build a web-based platform where administrators (educators/trainers) can crea
 6. Dashboards <-> Admin + User history views 
 7. Testing & Fixes <-> Flow testing and bug correction 
 8. Deployment <-> Final demo and submission
-
-### Note:
--For any changes you make, summarize in the changelog.md file.

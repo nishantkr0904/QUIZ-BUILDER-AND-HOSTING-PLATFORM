@@ -1,0 +1,18 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'bootstrap/scss/bootstrap' as *;
+
+// Custom variables that override Bootstrap defaults
+$custom-primary: #007bff !default;    // Your custom primary color
+$custom-secondary: #6c757d !default;  // Your custom secondary color
+
+// Custom mixins and functions
+@mixin custom-transition($property: all, $duration: 0.3s) {
+  transition: $property $duration ease;
+}
+
+// Custom component styles and overrides
+:root {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+}

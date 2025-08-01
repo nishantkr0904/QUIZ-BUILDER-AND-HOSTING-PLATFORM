@@ -9,6 +9,9 @@ Technologies used...
 - AJAX (for dynamic interactions)
 - GitHub (for version control)
 
+### Note:
+-For any changes you make, summarize in the changelog.md file.
+
 # 🚀 Laravel / PHP / MySQL Backend Best Practices
 
 This guide outlines **best practices** for building a **Laravel backend** using PHP and MySQL. The goal is **clarity, scalability, security, and maintainability**, adhering to Laravel conventions and clean architecture principles.
@@ -154,6 +157,3 @@ composer.json      # PHP dependencies
 ---
 
 By following these **Laravel / PHP / MySQL backend best practices**, the **Quiz Builder and Hosting Platform** will remain scalable, secure, and maintainable for long-term use and future enhancements.
-
-### Note:
--For any changes you make, summarize in the changelog.md file.

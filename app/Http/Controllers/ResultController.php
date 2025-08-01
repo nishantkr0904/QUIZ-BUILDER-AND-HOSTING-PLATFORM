@@ -40,4 +40,20 @@ class ResultController extends Controller
             
         return view('user.results', compact('results'));
     }
+
+    public function show(Result $result)
+    {
+        // Ensure the user can only view their own results
+        if ($result->user_id !== Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
+
+        return view('quizzes.result', [
+            'quiz' => $result->quiz,
+            'result' => $result,
+            'answers' => $result->answers,
+            'score' => $result->score,
+            'completed_at' => $result->completed_at
+        ]);
+    }
 }

@@ -91,7 +91,7 @@
     <div class="card">
         <div class="card-body text-center py-5">
             <p class="mb-3">You haven't attempted any quizzes yet.</p>
-            <a href="{{ route('quizzes.list') }}" class="btn btn-primary">Browse Available Quizzes</a>
+            <a href="{{ route('home') }}" class="btn btn-primary">Browse Available Quizzes</a>
         </div>
     </div>
     @endif

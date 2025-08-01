@@ -13,6 +13,8 @@ return array(
     'Database\\Factories\\QuizFactory' => $baseDir . '/database/factories/QuizFactory.php',
     'Database\\Factories\\UserFactory' => $baseDir . '/database/factories/UserFactory.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
+    'Database\\Seeders\\SampleQuizzesSeeder' => $baseDir . '/database/seeders/SampleQuizzesSeeder.php',
+    'Database\\Seeders\\UpdateQuestionOrderSeeder' => $baseDir . '/database/seeders/UpdateQuestionOrderSeeder.php',
     'DateError' => $vendorDir . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
     'DateException' => $vendorDir . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
     'DateInvalidOperationException' => $vendorDir . '/symfony/polyfill-php83/Resources/stubs/DateInvalidOperationException.php',
