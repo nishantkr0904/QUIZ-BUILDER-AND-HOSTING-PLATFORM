@@ -10,6 +10,12 @@ class PublicHomeController extends Controller
 {
     public function welcome()
     {
+        if (auth()->check()) {
+            if (auth()->user()->is_admin) {
+                return redirect()->route('admin.dashboard');
+            }
+            return redirect()->route('dashboard');
+        }
         return view('welcome');
     }
 

@@ -13,7 +13,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\PublicHomeController;
 
 // Public routes
-Route::get('/', [PublicHomeController::class, 'welcome'])->name('welcome');
+Route::get('/', [PublicHomeController::class, 'welcome'])->name('welcome')->middleware('guest');
 
 // Protected routes
 Route::middleware(['auth'])->group(function () {

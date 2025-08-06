@@ -21,11 +21,17 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
-     * Where to redirect users after login.
+     * Get the post login redirect path.
      *
-     * @var string
+     * @return string
      */
-    protected $redirectTo = '/home';
+    public function redirectTo()
+    {
+        if (auth()->user()->is_admin) {
+            return '/admin/dashboard';
+        }
+        return '/home';
+    }
 
     /**
      * Create a new controller instance.

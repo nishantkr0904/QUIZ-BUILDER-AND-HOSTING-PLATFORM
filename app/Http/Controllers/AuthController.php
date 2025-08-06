@@ -102,13 +102,20 @@ class AuthController extends Controller
         ]);
 
         try {
-            if (Auth::attempt($request->only('email', 'password'), $request->filled('remember'))) {
+            $credentials = $request->only('email', 'password');
+            
+            if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
-                return redirect()->route('home');
+                
+                if (Auth::user()->is_admin) {
+                    return redirect()->intended(route('admin.dashboard'));
+                }
+                
+                return redirect()->intended(route('home'));
             }
 
             throw ValidationException::withMessages([
-                'email' => ['The provided credentials are incorrect.'],
+                'email' => ['Invalid credentials'],
             ]);
         } catch (\Exception $e) {
             Log::error('Login failed', ['error' => $e->getMessage()]);
@@ -138,7 +145,7 @@ class AuthController extends Controller
                 }
 
                 $request->session()->regenerate();
-                return redirect()->intended('/admin/dashboard');
+                return redirect()->intended(route('admin.dashboard'));
             }
 
             throw ValidationException::withMessages([

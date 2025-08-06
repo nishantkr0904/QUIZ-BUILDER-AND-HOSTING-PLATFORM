@@ -84,7 +84,3 @@ Create a web-based quiz platform supporting quiz creation, management, and asses
 8. [ ] User manual
 
 Version control: All changes must be documented in changelog.md using semantic versioning.
-
-Note:
-First complete the front part.
-Later, before starting the backend part, just once let me know.

@@ -22,6 +22,18 @@ class SampleQuizzesSeeder extends Seeder
             ]);
         }
 
+        // Create test user if it doesn't exist
+        if (!DB::table('users')->where('email', 'nishant@gmail.com')->exists()) {
+            DB::table('users')->insert([
+                'name' => 'nishant',
+                'email' => 'nishant@gmail.com',
+                'password' => bcrypt('password'),
+                'is_admin' => false,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+        }
+
         // Create categories if they don't exist
         $categories = [
             [
@@ -150,22 +162,22 @@ class SampleQuizzesSeeder extends Seeder
                 'quiz_id' => $quizIds['html-css-basics'],
                 'questions' => [
                     [
-                        'text' => 'Which HTML tag is used to create a hyperlink?',
-                        'type' => 'multiple_choice',
+                        'question_text' => 'Which HTML tag is used to create a hyperlink?',
+                        'question_type' => 'multiple_choice',
                         'options' => json_encode(['<link>', '<a>', '<href>', '<url>']),
                         'correct_answer' => '<a>',
                         'explanation' => 'The <a> (anchor) tag is used to create hyperlinks in HTML.'
                     ],
                     [
-                        'text' => 'What does CSS stand for?',
-                        'type' => 'single_answer',
+                        'question_text' => 'What does CSS stand for?',
+                        'question_type' => 'single_answer',
                         'options' => null,
                         'correct_answer' => 'Cascading Style Sheets',
                         'explanation' => 'CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML.'
                     ],
                     [
-                        'text' => 'In CSS, margin-collapse only occurs with vertical margins.',
-                        'type' => 'true_false',
+                        'question_text' => 'In CSS, margin-collapse only occurs with vertical margins.',
+                        'question_type' => 'true_false',
                         'options' => json_encode(['True', 'False']),
                         'correct_answer' => 'True',
                         'explanation' => 'Margin collapse only occurs with vertical margins in CSS, not with horizontal margins.'
@@ -177,22 +189,22 @@ class SampleQuizzesSeeder extends Seeder
                 'quiz_id' => $quizIds['javascript-advanced'],
                 'questions' => [
                     [
-                        'text' => 'Which of the following is not a JavaScript data type?',
-                        'type' => 'multiple_choice',
+                        'question_text' => 'Which of the following is not a JavaScript data type?',
+                        'question_type' => 'multiple_choice',
                         'options' => json_encode(['String', 'Boolean', 'Float', 'Symbol']),
                         'correct_answer' => 'Float',
                         'explanation' => 'Float is not a distinct data type in JavaScript. Numbers in JavaScript are all of type "number".'
                     ],
                     [
-                        'text' => 'What is the output of: console.log(typeof typeof 1)?',
-                        'type' => 'single_answer',
+                        'question_text' => 'What is the output of: console.log(typeof typeof 1)?',
+                        'question_type' => 'single_answer',
                         'options' => null,
                         'correct_answer' => 'string',
                         'explanation' => 'typeof 1 returns "number", and typeof "number" returns "string".'
                     ],
                     [
-                        'text' => 'In JavaScript, all objects inherit directly from Object.prototype.',
-                        'type' => 'true_false',
+                        'question_text' => 'In JavaScript, all objects inherit directly from Object.prototype.',
+                        'question_type' => 'true_false',
                         'options' => json_encode(['True', 'False']),
                         'correct_answer' => 'False',
                         'explanation' => 'Objects can inherit from other objects through the prototype chain, not necessarily directly from Object.prototype.'
@@ -204,22 +216,22 @@ class SampleQuizzesSeeder extends Seeder
                 'quiz_id' => $quizIds['sql-fundamentals'],
                 'questions' => [
                     [
-                        'text' => 'Which SQL clause is used to filter rows in a result set?',
-                        'type' => 'multiple_choice',
+                        'question_text' => 'Which SQL clause is used to filter rows in a result set?',
+                        'question_type' => 'multiple_choice',
                         'options' => json_encode(['FILTER', 'WHERE', 'HAVING', 'GROUP']),
                         'correct_answer' => 'WHERE',
                         'explanation' => 'The WHERE clause is used to filter rows based on specified conditions.'
                     ],
                     [
-                        'text' => 'What does RDBMS stand for?',
-                        'type' => 'single_answer',
+                        'question_text' => 'What does RDBMS stand for?',
+                        'question_type' => 'single_answer',
                         'options' => null,
                         'correct_answer' => 'Relational Database Management System',
                         'explanation' => 'RDBMS is software that manages relational databases based on the relational model.'
                     ],
                     [
-                        'text' => 'SQL is case-sensitive for table and column names.',
-                        'type' => 'true_false',
+                        'question_text' => 'SQL is case-sensitive for table and column names.',
+                        'question_type' => 'true_false',
                         'options' => json_encode(['True', 'False']),
                         'correct_answer' => 'False',
                         'explanation' => 'By default, SQL is not case-sensitive for table and column names, though some DBMS can be configured to be case-sensitive.'
@@ -231,22 +243,22 @@ class SampleQuizzesSeeder extends Seeder
                 'quiz_id' => $quizIds['database-design'],
                 'questions' => [
                     [
-                        'text' => 'Which normal form deals with removing transitive dependencies?',
-                        'type' => 'multiple_choice',
+                        'question_text' => 'Which normal form deals with removing transitive dependencies?',
+                        'question_type' => 'multiple_choice',
                         'options' => json_encode(['1NF', '2NF', '3NF', '4NF']),
                         'correct_answer' => '3NF',
                         'explanation' => 'Third Normal Form (3NF) addresses the removal of transitive dependencies in database design.'
                     ],
                     [
-                        'text' => 'What is the main purpose of an index in a database?',
-                        'type' => 'single_answer',
+                        'question_text' => 'What is the main purpose of an index in a database?',
+                        'question_type' => 'single_answer',
                         'options' => null,
                         'correct_answer' => 'To improve query performance by speeding up data retrieval',
                         'explanation' => 'Indexes are used to speed up data retrieval operations on database tables.'
                     ],
                     [
-                        'text' => 'Every table must have a primary key.',
-                        'type' => 'true_false',
+                        'question_text' => 'Every table must have a primary key.',
+                        'question_type' => 'true_false',
                         'options' => json_encode(['True', 'False']),
                         'correct_answer' => 'False',
                         'explanation' => 'While it\'s a best practice to have a primary key, it\'s not mandatory for every table to have one.'
@@ -258,22 +270,22 @@ class SampleQuizzesSeeder extends Seeder
                 'quiz_id' => $quizIds['basic-data-structures'],
                 'questions' => [
                     [
-                        'text' => 'Which data structure follows the LIFO principle?',
-                        'type' => 'multiple_choice',
+                        'question_text' => 'Which data structure follows the LIFO principle?',
+                        'question_type' => 'multiple_choice',
                         'options' => json_encode(['Queue', 'Stack', 'Array', 'Tree']),
                         'correct_answer' => 'Stack',
                         'explanation' => 'A Stack follows the Last In First Out (LIFO) principle.'
                     ],
                     [
-                        'text' => 'What is the time complexity of searching in a sorted array using binary search?',
-                        'type' => 'single_answer',
+                        'question_text' => 'What is the time complexity of searching in a sorted array using binary search?',
+                        'question_type' => 'single_answer',
                         'options' => null,
                         'correct_answer' => 'O(log n)',
                         'explanation' => 'Binary search has a time complexity of O(log n) as it divides the search space in half with each step.'
                     ],
                     [
-                        'text' => 'A linked list always uses less memory than an array.',
-                        'type' => 'true_false',
+                        'question_text' => 'A linked list always uses less memory than an array.',
+                        'question_type' => 'true_false',
                         'options' => json_encode(['True', 'False']),
                         'correct_answer' => 'False',
                         'explanation' => 'Linked lists require extra memory for storing node pointers, which can make them use more memory than arrays in some cases.'
@@ -285,22 +297,22 @@ class SampleQuizzesSeeder extends Seeder
                 'quiz_id' => $quizIds['advanced-algorithms'],
                 'questions' => [
                     [
-                        'text' => 'Which sorting algorithm has the best average-case time complexity?',
-                        'type' => 'multiple_choice',
+                        'question_text' => 'Which sorting algorithm has the best average-case time complexity?',
+                        'question_type' => 'multiple_choice',
                         'options' => json_encode(['Bubble Sort', 'Quick Sort', 'Selection Sort', 'Insertion Sort']),
                         'correct_answer' => 'Quick Sort',
                         'explanation' => 'Quick Sort has an average time complexity of O(n log n) and is generally faster in practice.'
                     ],
                     [
-                        'text' => 'What is the space complexity of recursive fibonacci implementation?',
-                        'type' => 'single_answer',
+                        'question_text' => 'What is the space complexity of recursive fibonacci implementation?',
+                        'question_type' => 'single_answer',
                         'options' => null,
                         'correct_answer' => 'O(n)',
                         'explanation' => 'The space complexity is O(n) due to the recursive call stack depth.'
                     ],
                     [
-                        'text' => 'Dynamic Programming always provides better time complexity than recursive solutions.',
-                        'type' => 'true_false',
+                        'question_text' => 'Dynamic Programming always provides better time complexity than recursive solutions.',
+                        'question_type' => 'true_false',
                         'options' => json_encode(['True', 'False']),
                         'correct_answer' => 'False',
                         'explanation' => 'While Dynamic Programming often improves time complexity, it doesn\'t always provide better time complexity than other approaches.'
@@ -315,7 +327,7 @@ class SampleQuizzesSeeder extends Seeder
             foreach ($quizQuestions['questions'] as $question) {
                 if (!DB::table('questions')->where([
                     'quiz_id' => $quiz_id,
-                    'text' => $question['text']
+                    'question_text' => $question['question_text']
                 ])->exists()) {
                     DB::table('questions')->insert(array_merge($question, [
                         'quiz_id' => $quiz_id,

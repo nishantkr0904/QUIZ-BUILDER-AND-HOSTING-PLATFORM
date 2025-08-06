@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateQuestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,6 @@ return new class extends Migration
             $table->json('options')->nullable();
             $table->string('correct_answer');
             $table->text('explanation')->nullable();
-            $table->integer('order')->default(0);
             $table->integer('points')->default(1);
             $table->timestamps();
             $table->softDeletes();

@@ -1,6 +1,16 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- Quiz Creation Feature (FR004)
+  - Created Quiz model with relationships and accessors
+  - Implemented QuizController with CRUD operations
+  - Added quiz creation form with validation
+  - Created database migration for quizzes table
+  - Added admin routes for quiz management
+  - Added form request validation via StoreQuizRequest
+  - Added quiz metadata fields (title, description, category, difficulty, duration, passing score)
+
 ### Fixed
 - Fixed route error by replacing `quizzes.available` with `home` route in dashboard, quizzes, and results views
 - Removed unused route and consolidated available quizzes listing into the home page

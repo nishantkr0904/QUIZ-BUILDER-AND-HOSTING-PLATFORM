@@ -23,19 +23,60 @@
                 @endauth
             </ul>
             <ul class="navbar-nav ms-auto">
-                
-                @auth
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">
+                            <i class="fas fa-sign-in-alt me-1"></i>Login
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">
+                            <i class="fas fa-user-plus me-1"></i>Register
+                        </a>
+                    </li>
+                @else
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
                            data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-user-circle me-1"></i>{{ Auth::user()->name }}
+                            @if(Auth::user()->is_admin)
+                                <span class="badge bg-danger ms-1">Admin</span>
+                            @endif
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('dashboard') }}">
-                                    <i class="fas fa-tachometer-alt me-2"></i>My Dashboard
-                                </a>
-                            </li>
+                            @if(Auth::user()->is_admin)
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                        <i class="fas fa-tachometer-alt me-2"></i>Admin Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('admin.quizzes') }}">
+                                        <i class="fas fa-clipboard-list me-2"></i>Manage Quizzes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('admin.categories') }}">
+                                        <i class="fas fa-folder me-2"></i>Manage Categories
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('admin.users') }}">
+                                        <i class="fas fa-users me-2"></i>Manage Users
+                                    </a>
+                                </li>
+                            @else
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                        <i class="fas fa-tachometer-alt me-2"></i>My Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('user.quizzes') }}">
+                                        <i class="fas fa-history me-2"></i>My Quiz History
+                                    </a>
+                                </li>
+                            @endif
                             <li><hr class="dropdown-divider"></li>
                             <li>
                                 <form action="{{ route('logout') }}" method="POST" class="d-inline">
@@ -47,7 +88,7 @@
                             </li>
                         </ul>
                     </li>
-                @endauth
+                @endguest
             </ul>
         </div>
     </div>

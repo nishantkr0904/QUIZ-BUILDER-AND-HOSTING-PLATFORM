@@ -11,11 +11,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Create admin user if it doesn't exist
-        if (!DB::table('users')->where('email', 'admin@qbhp.com')->exists()) {
+        // Only create admin user in development environment
+        if (app()->environment('local') && !DB::table('users')->where('email', 'admin@qbhp.com')->exists()) {
             DB::table('users')->insert([
                 'name' => 'Admin User',
                 'email' => 'admin@qbhp.com',
                 'password' => Hash::make('password123'),
+                'is_admin' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
