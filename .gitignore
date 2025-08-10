@@ -1,0 +1,41 @@
+# Dependencies
+/node_modules
+/vendor
+
+# Laravel specific
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+
+# Environment files
+.env
+.env.backup
+.env.production
+.env.dusk.local
+.env.*.local
+
+# Testing
+.phpunit.result.cache
+phpunit.xml
+
+# Framework files
+Homestead.json
+Homestead.yaml
+auth.json
+
+# Logs and debugging
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+/.fleet
+/.idea
+/.vscode
+
+# GitHub specific
+.github/instructions/frontend.instructions.md
+.github/instructions/code-style.instructions.md
+.github/prompts/
+.github/copilot-instructions.md
+.github/instructions/backend.instructions.md
