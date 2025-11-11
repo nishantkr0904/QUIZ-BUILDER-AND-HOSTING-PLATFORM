@@ -21,4 +21,18 @@ class Question extends Model
     {
         return $this->belongsTo(Quiz::class);
     }
+
+    /**
+     * Get available question types.
+     *
+     * @return array
+     */
+    public static function getTypes(): array
+    {
+        return [
+            'multiple_choice' => 'Multiple Choice',
+            'single_choice' => 'Single Choice',
+            'true_false' => 'True/False'
+        ];
+    }
 }

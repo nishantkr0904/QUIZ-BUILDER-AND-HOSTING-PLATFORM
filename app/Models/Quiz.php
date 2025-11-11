@@ -12,7 +12,7 @@ class Quiz extends Model
     protected $fillable = [
         'title', 'category_id', 'created_by', 'difficulty', 'duration',
         'passing_score', 'review_enabled', 'availability_start', 'availability_end',
-        'featured', 'description', 'status'
+        'featured', 'description', 'status', 'display_mode', 'randomize_questions'
     ];
 
     protected $casts = [
@@ -21,7 +21,8 @@ class Quiz extends Model
         'availability_end' => 'datetime',
         'duration' => 'integer',
         'passing_score' => 'integer',
-        'featured' => 'boolean'
+        'featured' => 'boolean',
+        'randomize_questions' => 'boolean'
     ];
     
     public function setDurationAttribute($value)

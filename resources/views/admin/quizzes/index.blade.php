@@ -78,7 +78,7 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="{{ route('admin.questions', $quiz->id) }}" 
+                                        <a href="{{ route('admin.quizzes.questions.index', $quiz->id) }}" 
                                            class="btn btn-sm btn-info" 
                                            title="Manage Questions">
                                             <i class="fas fa-list"></i>

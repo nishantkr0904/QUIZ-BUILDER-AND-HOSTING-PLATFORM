@@ -34,11 +34,6 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/leaderboard', [LeaderboardController::class, 'index'])->name('leaderboard');
 
-// Admin routes
-Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
-    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
-});
-
 // Authentication Routes
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -59,43 +54,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/results', [ResultController::class, 'results'])->name('user.results');
     Route::get('/quiz-result/{result}', [ResultController::class, 'show'])->name('quizzes.result');
     // ...other user routes
-});
-
-// Admin routes
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
-    // Dashboard
-    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
-    
-    // Quiz Management
-    Route::get('/quizzes', [QuizController::class, 'adminIndex'])->name('admin.quizzes');
-    Route::get('/quizzes/create', [QuizController::class, 'create'])->name('admin.quizzes.create');
-    Route::post('/quizzes', [QuizController::class, 'store'])->name('admin.quizzes.store');
-    Route::get('/quizzes/{id}/edit', [QuizController::class, 'edit'])->name('admin.quizzes.edit');
-    Route::put('/quizzes/{id}', [QuizController::class, 'update'])->name('admin.quizzes.update');
-    Route::delete('/quizzes/{id}', [QuizController::class, 'destroy'])->name('admin.quizzes.destroy');
-    
-    // Question Management
-    Route::get('/quizzes/{quiz_id}/questions', [QuestionController::class, 'index'])->name('admin.questions');
-    Route::get('/quizzes/{quiz_id}/questions/create', [QuestionController::class, 'create'])->name('admin.questions.create');
-    Route::post('/quizzes/{quiz_id}/questions', [QuestionController::class, 'store'])->name('admin.questions.store');
-    Route::get('/questions/{id}/edit', [QuestionController::class, 'edit'])->name('admin.questions.edit');
-    Route::put('/questions/{id}', [QuestionController::class, 'update'])->name('admin.questions.update');
-    Route::delete('/questions/{id}', [QuestionController::class, 'destroy'])->name('admin.questions.destroy');
-    Route::post('/questions/reorder', [QuestionController::class, 'reorder'])->name('admin.questions.reorder');
-    
-    // Category Management
-    Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories');
-    Route::get('/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
-    Route::post('/categories', [CategoryController::class, 'store'])->name('admin.categories.store');
-    Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
-    Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('admin.categories.update');
-    Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
-    
-    // User Management
-    Route::get('/users', [UserController::class, 'index'])->name('admin.users');
-    Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
-    Route::put('/users/{id}', [UserController::class, 'update'])->name('admin.users.update');
-    Route::post('/users/{id}/toggle-admin', [UserController::class, 'toggleAdmin'])->name('admin.users.toggle-admin');
 });
 
 // AJAX endpoints for quiz answer saving and submission

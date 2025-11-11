@@ -51,17 +51,17 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('admin.quizzes') }}">
+                                    <a class="dropdown-item" href="{{ route('admin.quizzes.index') }}">
                                         <i class="fas fa-clipboard-list me-2"></i>Manage Quizzes
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('admin.categories') }}">
+                                    <a class="dropdown-item" href="{{ route('admin.categories.index') }}">
                                         <i class="fas fa-folder me-2"></i>Manage Categories
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('admin.users') }}">
+                                    <a class="dropdown-item" href="{{ route('admin.users.index') }}">
                                         <i class="fas fa-users me-2"></i>Manage Users
                                     </a>
                                 </li>

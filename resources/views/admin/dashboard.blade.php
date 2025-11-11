@@ -111,7 +111,7 @@
                         <a href="{{ route('admin.categories.create') }}" class="btn btn-success">
                             <i class="fas fa-folder-plus"></i> Add Category
                         </a>
-                        <a href="{{ route('admin.users') }}" class="btn btn-info">
+                        <a href="{{ route('admin.users.index') }}" class="btn btn-info">
                             <i class="fas fa-users"></i> Manage Users
                         </a>
                     </div>

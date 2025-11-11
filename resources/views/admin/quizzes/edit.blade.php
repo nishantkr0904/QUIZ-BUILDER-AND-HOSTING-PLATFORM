@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h1 class="h4 mb-0">Edit Quiz</h1>
-                    <a href="{{ route('admin.questions', $quiz->id) }}" class="btn btn-primary btn-sm">
+                    <a href="{{ route('admin.quizzes.questions.index', $quiz->id) }}" class="btn btn-primary btn-sm">
                         Manage Questions
                     </a>
                 </div>
@@ -172,7 +172,7 @@
                         </div>
 
                         <div class="d-flex justify-content-between">
-                            <a href="{{ route('admin.quizzes') }}" class="btn btn-secondary">Cancel</a>
+                            <a href="{{ route('admin.quizzes.index') }}" class="btn btn-secondary">Cancel</a>
                             <button type="submit" class="btn btn-primary">Update Quiz</button>
                         </div>
                     </form>

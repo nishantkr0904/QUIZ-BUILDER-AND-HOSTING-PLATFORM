@@ -14,14 +14,14 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('quiz_id')->constrained()->onDelete('cascade');
-            $table->text('question_text');
-            $table->enum('question_type', ['multiple_choice', 'true_false', 'single_answer']);
+            $table->text('question');
+            $table->enum('type', ['multiple_choice', 'single_choice', 'true_false']);
             $table->json('options')->nullable();
             $table->string('correct_answer');
             $table->text('explanation')->nullable();
             $table->integer('points')->default(1);
+            $table->integer('order')->default(0);
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

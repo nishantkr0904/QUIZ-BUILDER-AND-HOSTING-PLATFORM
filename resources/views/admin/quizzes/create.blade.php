@@ -182,7 +182,7 @@
                         </div>
 
                         <div class="d-flex justify-content-between">
-                            <a href="{{ route('admin.quizzes') }}" class="btn btn-secondary">Cancel</a>
+                            <a href="{{ route('admin.quizzes.index') }}" class="btn btn-secondary">Cancel</a>
                             <button type="submit" class="btn btn-primary">Create Quiz</button>
                         </div>
                     </form>
